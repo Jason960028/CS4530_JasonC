@@ -14,9 +14,6 @@ import com.example.a1helloandroid.databinding.FragmentFirstBinding
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,8 +29,22 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        // Create a list of the buttons
+        val buttons = listOf(
+            binding.buttonOne to "Button One",
+            binding.buttonTwo to "Button Two",
+            binding.buttonThree to "Button Three",
+            binding.buttonFour to "Button Four",
+            binding.buttonFive to "Button Five"
+        )
+
+        buttons.forEach { (button, text) ->
+            button.setOnClickListener {
+                val bundle = Bundle().apply {
+                    putString("buttonText", text)
+                }
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+            }
         }
     }
 

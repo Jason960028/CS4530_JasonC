@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment"
+    tools:context=".FirstActivity"
     tools:ignore="ExtraText">
     /Users/jc/StudioProjects/HelloAndroid/app/src/main/java/com/example/helloandroid/FirstFragment.kt
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,12 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="@string/choose_a_button_to_continue"
+            android:text="Choose a button"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/button_one"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

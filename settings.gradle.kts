@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "A1HelloAndroid"
 include(":A1")
-include(":a2")
+include(":A2")

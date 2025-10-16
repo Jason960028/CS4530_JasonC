@@ -3,10 +3,17 @@ package com.example.a2
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.State
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
-class CourseViewModel : ViewModel() {
-    private val _courses = mutableStateOf<List<Course>>(emptyList())
-    val courses: State<List<Course>> = _courses
+class CourseViewModel(private val repository: CourseRepository) : ViewModel() {
+    val courses = repository.allCourses.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
 
     private val _selectedCourse = mutableStateOf<Course?>(null)
     val selectedCourse: State<Course?> = _selectedCourse
@@ -20,11 +27,15 @@ class CourseViewModel : ViewModel() {
             courseNumber = courseNumber,
             location = location
         )
-        _courses.value = _courses.value + newCourse
+        viewModelScope.launch {
+            repository.insert(newCourse)
+        }
     }
 
     fun deleteCourse(course: Course) {
-        _courses.value = _courses.value.filter { it.id != course.id }
+        viewModelScope.launch {
+            repository.delete(course)
+        }
         if (_selectedCourse.value?.id == course.id) {
             _selectedCourse.value = null
         }

@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.a2.ui.theme.A2Theme
 
@@ -28,10 +29,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun CourseManagerApp(
-    viewModel: CourseViewModel = viewModel()
-) {
-    val courses by viewModel.courses
+fun CourseManagerApp() {
+    val context = LocalContext.current
+    val database = AppDatabase.getDatabase(context)
+    val repository = CourseRepository.getInstance(database.courseDao())
+    val viewModelFactory = CourseViewModelFactory(repository)
+    val viewModel: CourseViewModel = viewModel(factory = viewModelFactory)
+
+    val courses by viewModel.courses.collectAsState()
     val selectedCourse by viewModel.selectedCourse
     val showAddCourseDialog by viewModel.showAddCourseDialog
 

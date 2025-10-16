@@ -1,4 +1,4 @@
-package com.example.a2
+package com.example.a2.viewmodel
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.State
@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import com.example.a2.data.Course
+import com.example.a2.data.CourseRepository
 
 class CourseViewModel(private val repository: CourseRepository) : ViewModel() {
     val courses = repository.allCourses.stateIn(

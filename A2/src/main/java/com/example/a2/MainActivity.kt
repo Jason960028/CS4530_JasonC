@@ -10,7 +10,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.a2.data.AppDatabase
+import com.example.a2.data.CourseRepository
+import com.example.a2.ui.screens.AddCourseDialog
+import com.example.a2.ui.screens.CourseDetailsScreen
+import com.example.a2.ui.screens.CourseListScreen
 import com.example.a2.ui.theme.A2Theme
+import com.example.a2.viewmodel.CourseViewModel
+import com.example.a2.viewmodel.CourseViewModelFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

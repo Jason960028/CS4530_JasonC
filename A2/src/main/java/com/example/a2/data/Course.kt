@@ -4,7 +4,7 @@
  * Make ID to auto-generate with @PrimaryKey(autoGenerate = true)
  */
 
-package com.example.a2
+package com.example.a2.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

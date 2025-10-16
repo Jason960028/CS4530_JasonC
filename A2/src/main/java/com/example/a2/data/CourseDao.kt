@@ -2,7 +2,7 @@
  * This File handles Data Access Object
  * Using Flow that allow the UI automatically updates without manual refresh calls when insert or delete course.
  */
-package com.example.a2
+package com.example.a2.data
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

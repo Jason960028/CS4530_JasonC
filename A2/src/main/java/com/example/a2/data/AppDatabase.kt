@@ -3,7 +3,7 @@
  *
  */
 
-package com.example.a2
+package com.example.a2.data
 
 import android.content.Context
 import androidx.room.Database

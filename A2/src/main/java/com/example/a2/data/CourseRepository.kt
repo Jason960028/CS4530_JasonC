@@ -4,7 +4,7 @@
  *
  */
 
-package com.example.a2
+package com.example.a2.data
 
 import kotlinx.coroutines.flow.Flow
 

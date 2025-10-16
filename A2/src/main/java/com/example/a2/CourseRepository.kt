@@ -20,10 +20,6 @@ class CourseRepository private constructor(private val courseDao: CourseDao) {
         courseDao.delete(course)
     }
 
-    suspend fun deleteAll() {
-        courseDao.deleteAll()
-    }
-
     companion object {
         @Volatile
         private var INSTANCE: CourseRepository? = null

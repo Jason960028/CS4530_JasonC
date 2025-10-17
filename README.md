@@ -6,3 +6,5 @@
 
 
 # Assignment 1: Hello Android
+# Assignment 2
+# Assignment 3: done in previous A2 folder

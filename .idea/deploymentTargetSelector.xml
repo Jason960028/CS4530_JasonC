@@ -5,10 +5,13 @@
       <SelectionState runConfigName="A1HelloAndroid.A2">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="A1HelloAndroid.A4">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
       <SelectionState runConfigName="A1HelloAndroid.A1">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="A1HelloAndroid.a4">
+      <SelectionState runConfigName="A1HelloAndroid.a5">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

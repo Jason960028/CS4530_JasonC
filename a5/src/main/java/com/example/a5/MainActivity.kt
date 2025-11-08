@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
 
         viewModel = ViewModelProvider(this)[MarbleViewModel::class.java]
 
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
         val gravitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)
         sensor = gravitySensor ?: sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
